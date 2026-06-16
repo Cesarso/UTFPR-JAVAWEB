@@ -1,4 +1,4 @@
-package br.edu.utfpr.cp.espjava.crudcidades.visao;
+package br.edu.utfpr.cp.espjava.crudcidades.cidade;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -79,11 +79,16 @@ public class CidadeController {
              * Não salva em memória e passa a salvar no banco de dados
              * cidades.add(cidade);
              */
-            CidadeEntidade novaCidade = new CidadeEntidade();
-            novaCidade.setNome(cidade.getNome());
-            novaCidade.setEstado(cidade.getEstado());
 
-            repository.save(novaCidade);
+            /*
+             * Depois de ter feito o DTO (Clonar()) em Cidade
+             * CidadeEntidade novaCidade = new CidadeEntidade();
+             * novaCidade.setNome(cidade.getNome());
+             * novaCidade.setEstado(cidade.getEstado());
+             */
+
+            // repository.save(novaCidade);
+            repository.save(cidade.clonar());
         }
 
         return "redirect:/";

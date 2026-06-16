@@ -14,20 +14,6 @@ public class CidadeEntidade implements java.io.Serializable {
     public CidadeEntidade() {
     }
 
-    public CidadeEntidade clonar() {
-        var cidadeEntidade = new CidadeEntidade();
-
-        cidadeEntidade.setNome(this.nome);
-        cidadeEntidade.setEstado(this.estado);
-        return cidadeEntidade;
-
-    }
-
-    public Cidade clonar(CidadeEntidade cidadeEntidade) {
-        var cidade = new Cidade(cidadeEntidade.getNome(), cidadeEntidade.getEstado());
-        return cidade;
-    }
-
     public String getEstado() {
         return estado;
     }
