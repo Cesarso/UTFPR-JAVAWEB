@@ -19,7 +19,7 @@
         </div>
 
         <#if cidadeAtual??>
-            <form action="/alterar" method="POST">
+            <form action="/alterar" method="POST" class="need-validation" novalidate>
             <input type="hidden" name="nomeAtual" value="${(cidadeAtual.nome)!}" />
             <input type="hidden" name="estadoAtual" value="${(cidadeAtual.estado)!}" />
         <#else>
@@ -30,12 +30,19 @@
         
             <div class="form-group">
                 <label for="nome">Cidade:</label>
-                <input value="${(cidadeAtual.nome)!}" name="nome" type="text" class="form-control" placeholder="Informe o nome da cidade" id="nome">
+                <input value="${(cidadeAtual.nome)!} ${nomeInformado!}" name="nome" type="text" class="form-control ${(nome??) ? then('is-invalid', '')}" placeholder="Informe o nome da cidade" id="nome">
+            
+                <div class="invalid-feedback">
+                    ${nome!}
+                </div>
             </div>
             <div class="form-group">
                 <label for="estado">Estado:</label>
-                <input value="${(cidadeAtual.estado)!}" name="estado" type="text" class="form-control" placeholder="Informe o estado ao qual a cidade pertence"
+                <input maxlength="2" value="${(cidadeAtual.estado)!}" name="estado" type="text" class="form-control ${(estado??) ? then('is-invalid', '')}" placeholder="Informe o estado ao qual a cidade pertence"
                     id="estado">
+                <div class="invalid-feedback">
+                    ${estado!}
+                </div>
             </div>
 
             <#if cidadeAtual??>
