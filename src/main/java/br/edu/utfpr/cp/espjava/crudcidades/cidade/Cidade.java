@@ -3,7 +3,7 @@ package br.edu.utfpr.cp.espjava.crudcidades.visao;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public final class Cidade {
+public final class Cidade implements java.io.Serializable {
     @NotBlank(message = "O nome da cidade é obrigatório")
     @Size(min = 5, max = 60, message = "O nome da cidade deve conter entre 5 e 60 caracteres")
     private final String nome;
