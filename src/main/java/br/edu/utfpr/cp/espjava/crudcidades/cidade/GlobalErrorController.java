@@ -1,4 +1,4 @@
-package br.edu.utfpr.cp.espjava.crudcidades.visao;
+package br.edu.utfpr.cp.espjava.crudcidades.cidade;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
