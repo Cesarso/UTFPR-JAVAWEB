@@ -1,15 +1,17 @@
 package br.edu.utfpr.cp.espjava.crudcidades.cidade;
 
-import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class CidadeEntidade implements java.io.Serializable {
-    @Generated(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private final String estado;
+    private String estado;
 
     public CidadeEntidade() {
     }
